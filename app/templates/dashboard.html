@@ -1,0 +1,27 @@
+<!-- app/templates/dashboard.html -->
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block page_content %}
+<div class="container">
+    <h1>Dashboard</h1>
+    <p>Aqui estão listados todos os usuários registrados no sistema:</p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome do Usuário</th>
+                <th>Função</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.username }}</td>
+                <td>{{ user.role.name }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
